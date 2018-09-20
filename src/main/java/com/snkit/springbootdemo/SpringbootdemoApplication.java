@@ -22,6 +22,8 @@ public class SpringbootdemoApplication implements CommandLineRunner{
 		
 		System.out.println("    From Command line runner  ::::::::::::::::::::::::   ");
 		
+		System.out.println("    From Command line runner  ::::::::::::::::::::::::   ");
+		
 		userRepository.findAll().forEach(user -> {
 			System.out.println("    User    "+user.toString());
 		});

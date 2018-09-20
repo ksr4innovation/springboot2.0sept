@@ -109,6 +109,7 @@ public class DemoController {
 			"application/xml" }, produces = {
 					"application/json", "application/xml" })
 	public Collection<EmployeeVO> saveData(@Valid @RequestBody EmployeeVO empVO){
+		System.out.println("    From Command line runner  ::::::::::::::::::::::::   ");
 		
 
 		map.put(empVO, empVO);
