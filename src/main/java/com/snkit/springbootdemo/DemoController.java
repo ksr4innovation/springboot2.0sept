@@ -27,23 +27,34 @@ public class DemoController {
 	@Autowired
 	DemoService demoService;
 	
+	@Autowired
+	AccountLogin  accountLogin;
+	
 	
 	private Map<EmployeeVO,EmployeeVO> map = new HashMap<EmployeeVO,EmployeeVO>();
 
 	@GetMapping(value = "/sayHi")
 	public String sayHi() {
-		return "Hello world";
+		
+		EmployeeVO emp = new EmployeeVO();
+		
+		String str = "Hello world"+accountLogin.Login("1234");
+		
+		CommonUtil.validateInput("1234");
+		
+		return str;
 	}
 
 	@RequestMapping(value = "/sayRequest", method = RequestMethod.GET)
 	public String sayHiReq() {
+		accountLogin.Login("1234");
 		return "Hello world";
 	}
 
 	@GetMapping(value = "/getEmp", consumes = { "application/json", "application/xml" },
 			produces = {"application/json", "application/xml" })
 	public List<EmployeeVO> getEmp() {
-
+		accountLogin.Login("1234");
 		List<EmployeeVO> list = new ArrayList<EmployeeVO>();
 
 		EmployeeVO e = new EmployeeVO("test");
@@ -66,7 +77,7 @@ public class DemoController {
 			produces = {"application/vnd.snkit-v1+json",
 					"application/vnd.snkit-v1+xml" })
 	public List<EmployeeVO> getEmpCompB() {
-
+		accountLogin.Login("1234");
 		List<EmployeeVO> list = new ArrayList<EmployeeVO>();
 
 		EmployeeVO e = new EmployeeVO("test");
