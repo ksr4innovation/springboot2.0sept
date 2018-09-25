@@ -20,6 +20,8 @@ public class SpringbootdemoApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
+		
+		
 		System.out.println("    From Command line runner  ::::::::::::::::::::::::   ");
 		
 		System.out.println("    From Command line runner  ::::::::::::::::::::::::   ");
