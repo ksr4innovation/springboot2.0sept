@@ -4,6 +4,8 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class EmployeeVO {
+	
+	int i = 10;
 	public EmployeeVO(){
 		
 	}
@@ -31,6 +33,14 @@ public class EmployeeVO {
 		this.name = name;
 	}
 	
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
 	@Pattern(regexp="[a-zA-Z]{15,20}",message="Please enter valid name")	
 	private String name;
 	
