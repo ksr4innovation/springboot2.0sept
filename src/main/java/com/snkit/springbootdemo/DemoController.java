@@ -8,7 +8,9 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.snkit.springboot.democomponentbean.ValidateAccount;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,25 +32,26 @@ public class DemoController {
 	@Autowired
 	AccountLogin  accountLogin;
 	
+	@Autowired
+	ValidateAccount validateAccount;
+	
+	@Autowired
+	@Qualifier("cLoginService")
+	DemoLogin demoLogin;
+	
 	
 	private Map<EmployeeVO,EmployeeVO> map = new HashMap<EmployeeVO,EmployeeVO>();
 
 	@GetMapping(value = "/sayHi")
 	public String sayHi() {
 		
-		EmployeeVO emp = new EmployeeVO();
-		
-		String str = "Hello world"+accountLogin.Login("1234");
-		
-		CommonUtil.validateInput("1234");
-		
-		return str;
+		return demoLogin.login("12345");
 	}
 
 	@RequestMapping(value = "/sayRequest", method = RequestMethod.GET)
 	public String sayHiReq() {
 		accountLogin.Login("1234");
-		return "Hello world";
+		return "Hello world"+validateAccount.Login("12345");
 	}
 
 	@GetMapping(value = "/getEmp", consumes = { "application/json", "application/xml" },

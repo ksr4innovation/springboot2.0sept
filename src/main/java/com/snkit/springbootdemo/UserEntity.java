@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+
 @Entity
 @Table(schema="microservice" ,name="user")
 public class UserEntity implements Serializable {
@@ -24,6 +26,9 @@ public class UserEntity implements Serializable {
 	
 	@Column(name="name")
 	private String name;
+	
+	
+	
 
 	public Long getId() {
 		return id;
