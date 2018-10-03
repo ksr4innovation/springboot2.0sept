@@ -1,4 +1,4 @@
-package com.snkit.springbootdemo;
+package com.snkit.springbootdemo.custorder;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

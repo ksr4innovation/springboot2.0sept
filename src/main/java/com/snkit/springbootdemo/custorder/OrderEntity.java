@@ -1,4 +1,4 @@
-package com.snkit.springbootdemo;
+package com.snkit.springbootdemo.custorder;
 
 import java.io.Serializable;
 
@@ -20,7 +20,8 @@ public class OrderEntity implements Serializable {
 	public OrderEntity() {
 		
 	}
-	@Id		
+	@Id	
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private Long id;
 	

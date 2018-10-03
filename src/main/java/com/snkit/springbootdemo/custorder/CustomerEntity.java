@@ -1,4 +1,4 @@
-package com.snkit.springbootdemo;
+package com.snkit.springbootdemo.custorder;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,8 +7,11 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,7 @@ public class CustomerEntity implements Serializable {
 	}
 	
 	@Id
+ 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private Long id;
 	

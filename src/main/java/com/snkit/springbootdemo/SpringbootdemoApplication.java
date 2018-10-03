@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.snkit.springbootdemo.custorder.CustomerEntity;
+import com.snkit.springbootdemo.custorder.CustomerRepository;
+import com.snkit.springbootdemo.custorder.OrderEntity;
 
 @SpringBootApplication
 public class SpringbootdemoApplication implements CommandLineRunner{
