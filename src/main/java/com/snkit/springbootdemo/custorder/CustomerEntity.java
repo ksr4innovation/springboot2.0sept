@@ -6,17 +6,32 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
 @Entity
 @Table(schema="microservice",name="customer")
+@SqlResultSetMapping(name="customerMapping",classes= {		
+		@ConstructorResult(targetClass=CustomerNativeVO.class,
+				columns= {
+				 @ColumnResult(name="id",type=Long.class),
+				 @ColumnResult(name="name",type=String.class),
+				 @ColumnResult(name="email",type=String.class),
+				 @ColumnResult(name="addhar",type=String.class)
+		})
+})
+@NamedNativeQuery(name="native.customerquery",
+				  query="select cust.* from microservice.customer cust where cust.name=?1",
+				  resultSetMapping="customerMapping")
 public class CustomerEntity implements Serializable {
 	
 	public CustomerEntity() {

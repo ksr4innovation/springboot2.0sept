@@ -104,7 +104,9 @@ public class CustOrderServiceImpl implements CustOrderService {
 		List<CustomerEntity> custEntityList = custRepository.findByNameAndEmailAndAddhar(req.getName(),req.getEmail(),req.getAddhar());
 		return parseCustEntity(custEntityList);
 	}
-
-	
+	@Override
+	public List<CustomerNativeVO> getCustNaviteQuery(CustomerOrderReq req){
+		return custRepository.getCustByNativeQuery(req.getName());
+	}
 
 }

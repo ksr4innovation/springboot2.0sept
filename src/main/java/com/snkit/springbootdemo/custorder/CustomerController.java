@@ -1,5 +1,7 @@
 package com.snkit.springbootdemo.custorder;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,5 +40,10 @@ public class CustomerController {
 	@PostMapping(value="getCustToAvoidNPlus1",consumes="application/json")
 	public CustomerOrderResp getCustToAvoidNPlus1(@RequestBody CustomerOrderReq req) {		
 		return inputService.getCustToAvoidNPlus1(req);
+	}
+	
+	@PostMapping(value="getCustNaviteQuery",consumes="application/json")
+	public List<CustomerNativeVO> getCustNaviteQuery(@RequestBody CustomerOrderReq req) {		
+		return inputService.getCustNaviteQuery(req);
 	}
 }

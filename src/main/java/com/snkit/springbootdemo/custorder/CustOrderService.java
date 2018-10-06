@@ -1,5 +1,7 @@
 package com.snkit.springbootdemo.custorder;
 
+import java.util.List;
+
 public interface CustOrderService {
 	
 	
@@ -12,4 +14,6 @@ public interface CustOrderService {
 	CustomerOrderResp  findCustInfoNameAndEmailAndAddhar(CustomerOrderReq req);
 	
 	CustomerOrderResp  getCustToAvoidNPlus1(CustomerOrderReq req);
+	
+	List<CustomerNativeVO> getCustNaviteQuery(CustomerOrderReq req);
 }

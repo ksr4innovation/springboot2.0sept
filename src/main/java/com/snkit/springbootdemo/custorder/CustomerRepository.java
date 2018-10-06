@@ -25,4 +25,10 @@ public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> 
 			+ "    where cust.name =  :inputName  ")
 	List<CustomerEntity> getCustEmpDetailswithOutJoin(@Param("inputName") String name);
 	
+	
+	@Query(nativeQuery=true,name="native.customerquery")	
+	List<CustomerNativeVO>  getCustByNativeQuery(@Param("inputName") String name);
+	
+
+	
 }
