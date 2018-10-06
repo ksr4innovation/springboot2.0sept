@@ -32,6 +32,7 @@ public class OrderEntity implements Serializable {
 	private Long quantity;
 	
 
+
 	
 	@ManyToOne
 	@JoinColumn(name="cust_id",referencedColumnName="id")
@@ -69,6 +70,7 @@ public class OrderEntity implements Serializable {
 		this.quantity = quantity;
 	}
 
+	
 
 	
 	

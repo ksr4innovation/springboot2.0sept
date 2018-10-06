@@ -6,6 +6,7 @@ public class OrderVO {
 		
 	}
 
+	private Long orderId;
 	private Long amt;
 	
 	private Long quantity;
@@ -24,6 +25,14 @@ public class OrderVO {
 
 	public void setQuantity(Long quantity) {
 		this.quantity = quantity;
+	}
+
+	public Long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 	
 	
